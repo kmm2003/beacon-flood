@@ -5,8 +5,9 @@
 - scapy
 
 ## usage
-Save ssid list to file "ssid-list.txt"
+1) Save ssid list to file "ssid-list.txt"
 
+2) Exploit!
 ```
 syntax: python beacon-flood.py <interface>
 sample: python beacon-flood.py wlan0
