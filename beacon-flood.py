@@ -19,7 +19,7 @@ def flood(iface, netSSID):
 
   frame = RadioTap()/dot11/beacon/essid/rsn
 
-  sendp(frame, iface=iface, inter=0.0100 , loop=1)
+  sendp(frame, iface=iface, inter=0.00100 , loop=1)
   
 def main(iface):
   with open("./ssid-list.txt","r") as f:
