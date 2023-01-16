@@ -18,6 +18,8 @@ def flood(iface, netSSID):
   '\x00\x00'))
 
   frame = RadioTap()/dot11/beacon/essid/rsn
+  #frame.show()
+  #hexdump(frame)
 
   sendp(frame, iface=iface, inter=0.00100 , loop=1)
   
