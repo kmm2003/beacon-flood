@@ -6,7 +6,8 @@ def flood(iface, netSSID):
   dot11 = Dot11(type=0, subtype=8, addr1 = 'ff:ff:ff:ff:ff:ff', addr2=str(RandMAC()), addr3=str(RandMAC()))
   beacon = Dot11Beacon(cap='ESS+privacy')
   essid = Dot11Elt(ID='SSID', info=netSSID, len=len(netSSID))
-
+  
+  ''' rsn packet
   rsn = Dot11Elt(ID='RSNinfo', info=(
   '\x01\x00'
   '\x00\x0f\xac\x02'
@@ -16,8 +17,9 @@ def flood(iface, netSSID):
   '\x01\x00'
   '\x00\x0f\xac\x02'
   '\x00\x00'))
-
-  frame = RadioTap()/dot11/beacon/essid/rsn
+  '''
+  #frame = RadioTap()/dot11/beacon/essid/rsn
+  frame = RadioTap()/dot11/beacon/essid
   #frame.show()
   #hexdump(frame)
 
