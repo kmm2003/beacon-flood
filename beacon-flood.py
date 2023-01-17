@@ -18,8 +18,9 @@ def flood(iface, netSSID):
   '\x00\x0f\xac\x02'
   '\x00\x00'))
   '''
-  #frame = RadioTap()/dot11/beacon/essid/rsn
+  
   frame = RadioTap()/dot11/beacon/essid
+  #frame = RadioTap()/dot11/beacon/essid/rsn
   #frame.show()
   #hexdump(frame)
 
@@ -30,6 +31,8 @@ def main(iface):
     threads = []
     while True:
       ssid = f.readline()
+      ssid = ssid.encode("UTF-8")
+      #ssid = ssid + b"\x01\xF6\x0A"
       if not ssid: break
       t = Thread(target=flood, args=(iface, ssid))
       t.start()
