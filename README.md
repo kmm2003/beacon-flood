@@ -1,4 +1,4 @@
-# beacon-flood-py
+# beacon-flood
 
 ## requirement
 - python 3.9+
